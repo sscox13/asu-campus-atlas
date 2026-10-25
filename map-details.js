@@ -28,7 +28,7 @@ export async function addMapDetails({scene,model,center,camera,stage,renderer}) 
     context.lineJoin='round';context.strokeStyle='rgba(37,55,42,.65)';context.lineWidth=3;context.strokeText(street.name,canvas.width/2,54);
     context.fillStyle='#fff9df';context.fillText(street.name,canvas.width/2,54);
     const texture=new THREE.CanvasTexture(canvas);texture.colorSpace=THREE.SRGBColorSpace;texture.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());
-    const height=['University Drive','Mill Avenue','Rural Road','Apache Boulevard'].includes(street.name)?1.85:1.15,width=Math.min(canvas.width/canvas.height*height,street.length*.86);
+    const height=['University Drive','Mill Avenue','Rural Road','Apache Boulevard'].includes(street.name)?2.8:2.2,width=Math.min(canvas.width/canvas.height*height,street.length*.86);
     const lettering=new THREE.Mesh(new THREE.PlaneGeometry(width,height),new THREE.MeshBasicMaterial({map:texture,transparent:true,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-2,toneMapped:false}));
     const [a,b]=street.direction;let angle=Math.atan2(b[1]-a[1],b[0]-a[0]);if(angle>Math.PI/2)angle-=Math.PI;if(angle< -Math.PI/2)angle+=Math.PI;
     lettering.rotation.set(-Math.PI/2,0,angle);lettering.position.set(street.center[0]-center.x,2.72,-street.center[1]-center.z);lettering.renderOrder=3;scene.add(lettering);labels.push(lettering);
