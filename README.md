@@ -40,3 +40,6 @@ Publish from **main / (root)** under **Settings → Pages → Deploy from a bran
 Map data © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), available under the [Open Database License](https://opendatacommons.org/licenses/odbl/1-0/). See [ATTRIBUTION.txt](ATTRIBUTION.txt).
 
 This independent project is not affiliated with or endorsed by Arizona State University.
+
+
+Major street names are painted directly on the ground and can be toggled with Streets. Mapped landscape areas and street geometry come from the existing OpenStreetMap snapshot. Solid building walls use a polished sheen; separate window panes have been removed.
