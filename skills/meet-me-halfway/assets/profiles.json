@@ -1,0 +1,35 @@
+[
+  {
+    "id": "ava",
+    "name": "Ava",
+    "freeStart": 840,
+    "freeEnd": 1020,
+    "origin": 92,
+    "next": 92,
+    "maxWalk": 15,
+    "quiet": true,
+    "preferred": "hayden"
+  },
+  {
+    "id": "ben",
+    "name": "Ben",
+    "freeStart": 855,
+    "freeEnd": 990,
+    "origin": 68,
+    "next": 68,
+    "maxWalk": 15,
+    "quiet": false,
+    "preferred": "noble"
+  },
+  {
+    "id": "maya",
+    "name": "Maya",
+    "freeStart": 870,
+    "freeEnd": 1020,
+    "origin": 81,
+    "next": 81,
+    "maxWalk": 12,
+    "quiet": false,
+    "preferred": "hayden"
+  }
+]

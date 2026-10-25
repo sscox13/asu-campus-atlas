@@ -43,3 +43,10 @@ This independent project is not affiliated with or endorsed by Arizona State Uni
 
 
 Major street names are painted directly on the ground and can be toggled with Streets. Mapped landscape areas and street geometry come from the existing OpenStreetMap snapshot. Solid building walls use a polished sheen; separate window panes have been removed.
+
+
+## Meet Me Halfway — Track 2 prototype
+
+Open [agents.html](https://sscox13.github.io/asu-campus-atlas/agents.html) for an editable, fictional three-student coordination demo using actual campus walking routes. It demonstrates proposal rejection, a fair revised plan, minimized shared packets, no-agreement states, and unanimous consent before calendar export. It runs independent constraint-planning agents locally; a live LLM or messaging service is not connected. See [project and demo notes](agents-submission.md). Run `node tests/test-agents.mjs` for negotiation and consent checks.
+
+Install the [Cubbie personal-agent skill](skills/meet-me-halfway) separately on each student's Cubbie. Students forward JSON request/ballot/agreement/confirmation attachments in iMessage; no messaging API or team API key is needed. Run `node tests/test-cubbie-agents.mjs` to test the actual packet protocol. Real Cubbie installation and a full three-account exchange are not yet observed.
