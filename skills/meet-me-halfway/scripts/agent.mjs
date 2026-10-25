@@ -62,7 +62,7 @@ if(process.argv[1]&&fileURLToPath(import.meta.url)===process.argv[1]){
  try{const [command,...args]=process.argv.slice(2),f=flags(args);let result;
   const load=key=>{assert(typeof f[key]==='string',`Missing --${key} file.`);return read(f[key]);};
   if(f.sample||command==='sample'||command==='--sample')result=sample();
-  else if(command==='places')result=places.filter(p=>!f.search||p.name.toLowerCase().includes(String(f.search).toLowerCase()));
+  else if(command==='places'){const list=f.major?read(new URL('data/campus-buildings.json',root)):places;result=list.filter(p=>!f.search||p.name.toLowerCase().includes(String(f.search).toLowerCase()));}
   else if(command==='start')result=start(load('settings'));
   else if(command==='evaluate')result=evaluate(load('request'),load('profile'));
   else if(command==='merge')result=merge(load('request'),load('ballots'));

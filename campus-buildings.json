@@ -1,0 +1,397 @@
+[
+  {
+    "index": 56,
+    "name": "Creativity Commons",
+    "group": "Libraries & student life"
+  },
+  {
+    "index": 43,
+    "name": "Hayden Library",
+    "group": "Libraries & student life"
+  },
+  {
+    "index": 42,
+    "name": "Memorial Union",
+    "group": "Libraries & student life"
+  },
+  {
+    "index": 121,
+    "name": "Noble Science and Engineering Library",
+    "group": "Libraries & student life"
+  },
+  {
+    "index": 83,
+    "name": "Student Health Services Building",
+    "group": "Libraries & student life"
+  },
+  {
+    "index": 27,
+    "name": "Student Services Building",
+    "group": "Libraries & student life"
+  },
+  {
+    "index": 57,
+    "name": "Sun Devil Campus Stores - Tempe Campus",
+    "group": "Libraries & student life"
+  },
+  {
+    "index": 102,
+    "name": "Sun Devil Fitness Complex",
+    "group": "Libraries & student life"
+  },
+  {
+    "index": 98,
+    "name": "Biodesign Institute Building A",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 97,
+    "name": "Biodesign Institute Building B",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 118,
+    "name": "Brickyard Engineering",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 69,
+    "name": "Engineering Annex",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 68,
+    "name": "Engineering Center A-Wing",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 70,
+    "name": "Engineering Center B-Wing",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 71,
+    "name": "Engineering Center C-Wing",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 72,
+    "name": "Engineering Center D-Wing",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 73,
+    "name": "Engineering Center E-Wing",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 74,
+    "name": "Engineering Center F-Wing",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 66,
+    "name": "Engineering Center G-Wing",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 67,
+    "name": "Engineering Research Center",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 95,
+    "name": "Goldwater Center",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 52,
+    "name": "Interdisciplinary Science and Technology Building (ISTB) 1",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 78,
+    "name": "Interdisciplinary Science and Technology Building (ISTB) 10",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 54,
+    "name": "Interdisciplinary Science and Technology Building (ISTB) 2",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 125,
+    "name": "Interdisciplinary Science and Technology Building (ISTB) 4",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 94,
+    "name": "Interdisciplinary Science and Technology Building (ISTB) 5",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 65,
+    "name": "Life Sciences C-Wing",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 3,
+    "name": "Life Sciences Center",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 64,
+    "name": "Life Sciences E-Wing",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 91,
+    "name": "Physical Science B Wing",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 90,
+    "name": "Physical Science C Wing",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 89,
+    "name": "Physical Science D Wing",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 88,
+    "name": "Physical Science E Wing",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 85,
+    "name": "Physical Science F Wing",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 86,
+    "name": "Physical Science G Wing",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 87,
+    "name": "Physical Science H Wing",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 75,
+    "name": "Psychology Building",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 53,
+    "name": "Psychology North",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 92,
+    "name": "Wexler Hall",
+    "group": "Engineering & science"
+  },
+  {
+    "index": 60,
+    "name": "Armstrong Hall",
+    "group": "Arts & humanities"
+  },
+  {
+    "index": 37,
+    "name": "Art Building",
+    "group": "Arts & humanities"
+  },
+  {
+    "index": 39,
+    "name": "College of Design North",
+    "group": "Arts & humanities"
+  },
+  {
+    "index": 40,
+    "name": "College of Design South",
+    "group": "Arts & humanities"
+  },
+  {
+    "index": 62,
+    "name": "Durham Hall",
+    "group": "Arts & humanities"
+  },
+  {
+    "index": 15,
+    "name": "Lattie F. Coor Hall",
+    "group": "Arts & humanities"
+  },
+  {
+    "index": 49,
+    "name": "Lyceum Theatre",
+    "group": "Arts & humanities"
+  },
+  {
+    "index": 33,
+    "name": "Music Building",
+    "group": "Arts & humanities"
+  },
+  {
+    "index": 14,
+    "name": "Nelson Fine Arts Center",
+    "group": "Arts & humanities"
+  },
+  {
+    "index": 84,
+    "name": "Piper Writers House",
+    "group": "Arts & humanities"
+  },
+  {
+    "index": 59,
+    "name": "Ross-Blakley Hall",
+    "group": "Arts & humanities"
+  },
+  {
+    "index": 2,
+    "name": "Social Sciences",
+    "group": "Arts & humanities"
+  },
+  {
+    "index": 35,
+    "name": "Stauffer Communication Arts",
+    "group": "Arts & humanities"
+  },
+  {
+    "index": 45,
+    "name": "West Hall",
+    "group": "Arts & humanities"
+  },
+  {
+    "index": 25,
+    "name": "Business Administration",
+    "group": "Business & education"
+  },
+  {
+    "index": 24,
+    "name": "Business Administration C Wing",
+    "group": "Business & education"
+  },
+  {
+    "index": 26,
+    "name": "Discovery Hall",
+    "group": "Business & education"
+  },
+  {
+    "index": 31,
+    "name": "Education Lecture Hall",
+    "group": "Business & education"
+  },
+  {
+    "index": 19,
+    "name": "Fulton Center",
+    "group": "Business & education"
+  },
+  {
+    "index": 0,
+    "name": "H B Farmer Education Building",
+    "group": "Business & education"
+  },
+  {
+    "index": 162,
+    "name": "McCord Hall",
+    "group": "Business & education"
+  },
+  {
+    "index": 36,
+    "name": "Neeb Hall",
+    "group": "Business & education"
+  },
+  {
+    "index": 51,
+    "name": "Schwada Classroom Office Building",
+    "group": "Business & education"
+  },
+  {
+    "index": 48,
+    "name": "AJ Matthews Center",
+    "group": "Landmarks & athletics"
+  },
+  {
+    "index": 44,
+    "name": "Danforth Chapel",
+    "group": "Landmarks & athletics"
+  },
+  {
+    "index": 21,
+    "name": "Desert Financial Arena",
+    "group": "Landmarks & athletics"
+  },
+  {
+    "index": 101,
+    "name": "Grady Gammage Memorial Auditorium",
+    "group": "Landmarks & athletics"
+  },
+  {
+    "index": 47,
+    "name": "Matthews Hall",
+    "group": "Landmarks & athletics"
+  },
+  {
+    "index": 112,
+    "name": "Mona Plummer Aquatic Center",
+    "group": "Landmarks & athletics"
+  },
+  {
+    "index": 16,
+    "name": "Mountain America Stadium",
+    "group": "Landmarks & athletics"
+  },
+  {
+    "index": 81,
+    "name": "Old Main",
+    "group": "Landmarks & athletics"
+  },
+  {
+    "index": 82,
+    "name": "University Club",
+    "group": "Landmarks & athletics"
+  },
+  {
+    "index": 10,
+    "name": "Honors Hall",
+    "group": "Residence halls"
+  },
+  {
+    "index": 137,
+    "name": "Manzanita Hall",
+    "group": "Residence halls"
+  },
+  {
+    "index": 1,
+    "name": "McClintock Hall",
+    "group": "Residence halls"
+  },
+  {
+    "index": 6,
+    "name": "Palo Verde East",
+    "group": "Residence halls"
+  },
+  {
+    "index": 8,
+    "name": "Palo Verde West",
+    "group": "Residence halls"
+  },
+  {
+    "index": 4,
+    "name": "San Pablo Residence Hall",
+    "group": "Residence halls"
+  },
+  {
+    "index": 117,
+    "name": "University Towers",
+    "group": "Residence halls"
+  },
+  {
+    "index": 149,
+    "name": "Vista del Sol Community Center",
+    "group": "Residence halls"
+  }
+]

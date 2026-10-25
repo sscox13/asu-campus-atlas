@@ -1,7 +1,7 @@
 import {createWalkingRouter} from './route-core.mjs';
 import {StudentAgent,negotiate,ConsentLedger,calendarFile,timeText} from './agents-core.mjs';
 const $=id=>document.getElementById(id),ids=['ava','ben','maya'],names={ava:'Ava’s agent',ben:'Ben’s agent',maya:'Maya’s agent',Coordinator:'Coordinator',Students:'Students'};
-let profiles=[],venues=[],features=[],walk,run=null,revision=0;const ledger=new ConsentLedger(ids);
+let profiles=[],venues=[],features=[],campusBuildings=[],walk,run=null,revision=0;const ledger=new ConsentLedger(ids);
 const date=new Date(),phoenixDate=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Phoenix',year:'numeric',month:'2-digit',day:'2-digit'}).format(date);$('session-date').value=phoenixDate;
 const make=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
 const minutes=value=>{const [h,m]=value.split(':').map(Number);return h*60+m;};
@@ -14,12 +14,12 @@ function renderStudents(){
   const heading=make('div','student-heading');heading.append(make('span','avatar',p.name[0]));const title=make('div');title.append(make('h3','',`${p.name} + personal agent`),make('small','','LOCAL PROFILE · SAMPLE DATA'));heading.append(title);card.append(heading);
   const fields=make('div','student-fields');
   function field(label,key,type,options,wide=false){const wrap=make('div',wide?'wide':'');const id=`${p.id}-${key}`,labelElement=make('label','',label);labelElement.htmlFor=id;wrap.append(labelElement);let control;
-   if(options){control=make('select');for(const [value,text] of options){const option=make('option','',text);option.value=value;control.append(option);}}
+   if(options){control=make('select');const groups=new Map();for(const [value,text,group] of options){const option=make('option','',text);option.value=value;if(group){if(!groups.has(group)){const optgroup=make('optgroup');optgroup.label=group;groups.set(group,optgroup);control.append(optgroup);}groups.get(group).append(option);}else control.append(option);}}
    else{control=make('input');control.type=type;if(type==='time')control.step='900';if(type==='number'){control.min='0';control.max='60';}}
-   control.id=id;control.value=type==='time'?timeText(p[key]):p[key];control.addEventListener('change',()=>{p[key]=type==='time'?minutes(control.value):['maxWalk','origin','next'].includes(key)?Number(control.value):control.value;invalidate();});wrap.append(control);fields.append(wrap);
+   control.id=id;control.value=type==='time'?timeText(p[key]):p[key];control.addEventListener(type==='number'||type==='time'?'input':'change',()=>{p[key]=type==='time'?minutes(control.value):['maxWalk','origin','next'].includes(key)?Number(control.value):control.value;invalidate();});wrap.append(control);fields.append(wrap);
   }
   field('FREE AFTER','freeStart','time');field('MUST BE BACK BY','freeEnd','time');
-  const locations=features.filter(f=>['Hayden Library','Noble Science and Engineering Library','Memorial Union','Old Main','Wexler Hall','Engineering Center A-Wing'].includes(f.name)).map(f=>[f.index,f.name]);
+  const locations=campusBuildings.map(f=>[f.index,f.name,f.group]);
   field('LEAVING FROM · NOT SHARED','origin','select',locations,true);field('NEXT DESTINATION · NOT SHARED','next','select',locations,true);
   field('MAX WALK · MINUTES','maxWalk','number');field('PREFERRED VENUE','preferred','select',venues.map(v=>[v.id,v.short]));
   const quiet=make('label','quiet wide');const checkbox=make('input');checkbox.type='checkbox';checkbox.checked=p.quiet;checkbox.id=`${p.id}-quiet`;checkbox.addEventListener('change',()=>{p.quiet=checkbox.checked;invalidate();});quiet.append(checkbox,document.createTextNode('Quiet venue is a hard requirement'));fields.append(quiet);card.append(fields);
@@ -57,9 +57,9 @@ $('scenario').onchange=()=>{profiles=defaults();if($('scenario').value==='imposs
 $('session-date').onchange=invalidate;$('duration').onchange=invalidate;
 let defaults;
 try{
- const [meta,graph]=await Promise.all([fetch('model-info.json').then(r=>r.json()),fetch('walking-graph.json').then(r=>r.json())]);features=meta.features.map((f,index)=>({...f,index}));const index=name=>{const f=features.find(f=>f.name===name);if(!f)throw Error('Missing campus building');return f.index;};
+ const [meta,graph,buildings]=await Promise.all([fetch('model-info.json').then(r=>r.json()),fetch('walking-graph.json').then(r=>r.json()),fetch('campus-buildings.json').then(r=>{if(!r.ok)throw Error('Campus building list unavailable');return r.json();})]);campusBuildings=buildings;features=meta.features.map((f,index)=>({...f,index}));const index=name=>{const f=features.find(f=>f.name===name);if(!f)throw Error('Missing campus building');return f.index;};
  venues=[{id:'hayden',name:'Hayden Library',short:'Hayden',index:index('Hayden Library'),quiet:true},{id:'noble',name:'Noble Science and Engineering Library',short:'Noble',index:index('Noble Science and Engineering Library'),quiet:true},{id:'union',name:'Memorial Union',short:'Memorial Union',index:index('Memorial Union'),quiet:false}];
  const router=createWalkingRouter(graph),cache=new Map();walk=(a,b)=>{if(a===b)return {minutes:0,meters:0};const key=`${a}:${b}`;if(!cache.has(key))cache.set(key,router(a,b));return cache.get(key);};
  defaults=()=>[{id:'ava',name:'Ava',accent:'#d6c093',freeStart:840,freeEnd:1020,origin:index('Wexler Hall'),next:index('Wexler Hall'),maxWalk:15,quiet:true,preferred:'hayden'},{id:'ben',name:'Ben',accent:'#a5c2ca',freeStart:855,freeEnd:990,origin:index('Engineering Center A-Wing'),next:index('Engineering Center A-Wing'),maxWalk:15,quiet:false,preferred:'noble'},{id:'maya',name:'Maya',accent:'#b6c89e',freeStart:870,freeEnd:1020,origin:index('Old Main'),next:index('Old Main'),maxWalk:12,quiet:false,preferred:'hayden'}];
- profiles=defaults();renderStudents();$('negotiate').disabled=false;$('negotiate').textContent='Let the agents work ↗';
+ profiles=defaults();renderStudents();$('building-coverage').textContent=`${campusBuildings.length} major ASU buildings · Choose where you leave class and where you need to go next.`;$('negotiate').disabled=false;$('negotiate').textContent='Let the agents work ↗';
 }catch(error){$('run-state').textContent='ROUTE DATA UNAVAILABLE';$('messages').replaceChildren(make('p','',`Could not load the campus walking graph: ${error.message}. Please refresh.`));}
